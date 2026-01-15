@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Shopping List</title>
+    <!--Linking external CSS file and Javascript file-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="module" src="app.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <!--Header section with  title and subtitle-->
+            <h1><i class="fas fa-shopping-basket"></i> Smart Shopping List</h1>
+            <p class="subtitle">Items are automatically categorized for you</p>
+        </header>
+
+        <!--main content area-->
+        <div class="app-content">
+            <!--input section for adding new items-->
+            <div class="input-section">
+                <div class="input-group">
+                    <input type="text" id="item-input" placeholder="Enter an item (e.g., milk, apples, chicken)"
+                        autocomplete="off">
+                    <button id="add-btn"><i class="fas fa-plus"></i> Add</button>
+                </div>
+
+                <div class="category-info">
+                    <p><i class="fas fa-lightbulb"></i> Items are automatically categorized based on their name</p>
+                </div>
+            </div>
+
+            <!--Filter button to view different item states-->
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Items</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="purchased">Purchased</button>
+            </div>
+
+            <!--container for the list of shopped items-->
+
+            <ul id="item-list">
+                <li class="empty-state">
+                    <i class="fas fa-shopping-basket"></i>
+                    <p>Your shopping list is empty</p>
+                    <p class="muted">Add some items to get started!</p>
+                </li>
+            </ul>
+
+            <!--Action button for claering items-->
+
+            <div class="action-buttons">
+                <button id="clear-all"><i class="fas fa-trash"></i> Clear All</button>
+                <button id="clear-purchased"><i class="fas fa-check-double"></i> Clear Purchased</button>
+            </div>
+
+            <!--static button showing the items count-->
+
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number" id="total-items">0</span>
+                    <span class="stat-label">Total Items</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="purchased-items">0</span>
+                    <span class="stat-label">Purchased</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="remaining-items">0</span>
+                    <span class="stat-label">Remaining</span>
+                </div>
+            </div>
+        </div>
+
+        <!--footer area-->
+
+        <footer>
+            <p>&copy; Created by <span class="name">Anisha Mundra</span> | MADS 4007 Project</p>
+        </footer>
+    </div>
+
+    <!--notification element for showing message alert-->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle" id="notification-icon"></i>
+        <span id="notification-text"></span>
+    </div>
+
+</body>
+
+</html>

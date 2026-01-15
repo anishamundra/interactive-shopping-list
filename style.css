@@ -1,0 +1,608 @@
+/*resetting default browser styles*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body styling with gradient background */
+
+body {
+    background: linear-gradient(135deg, #2c3e50 0%, #4a6572 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+}
+
+/* Main container styling */
+
+.container {
+    background-color: #f8f9fa;
+    border-radius: 16px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease;
+}
+
+/* ===== HEADER STYLES ===== */
+
+header {
+    background: linear-gradient(90deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    padding: 24px;
+    text-align: center;
+    position: relative;
+}
+
+/* Decorative line under header */
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f1c40f 0%, #f39c12 100%);
+}
+
+/* Main title styling */
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Subtitle text */
+
+.subtitle {
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+/* ===== MAIN CONTENT AREA ===== */
+
+.app-content {
+    padding: 24px;
+}
+
+/* Input section styling */
+
+.input-section {
+    margin-bottom: 24px;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+/* Text input field */
+
+#item-input {
+    flex: 1;
+    padding: 16px 18px;
+    border: 2px solid #ddd;
+    border-radius: 10px 0 0 10px;
+    font-size: 16px;
+    transition: all 0.3s;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    background: white;
+}
+
+/* Focus state for text input */
+
+#item-input:focus {
+    outline: none;
+    border-color: #27ae60;
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+}
+
+/* Add button styling */
+
+#add-btn {
+    padding: 16px 24px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Hover effect for add button */
+
+#add-btn:hover {
+    background-color: #219653;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Information box about categorization */
+
+.category-info {
+    background-color: #e8f5e9;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 4px solid #27ae60;
+}
+
+/* Text inside category info box */
+
+.category-info p {
+    color: #2e7d32;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+/* ===== FILTER BUTTONS ===== */
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Individual filter button */
+
+.filter-btn {
+    padding: 10px 16px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+/* Hover effect for filter buttons */
+
+.filter-btn:hover {
+    background-color: #f5f7ff;
+}
+
+/* Active state for filter buttons */
+
+.filter-btn.active {
+    background-color: #27ae60;
+    color: white;
+    border-color: #27ae60;
+}
+
+/* ===== ITEMS LIST ===== */
+
+#item-list {
+    list-style-type: none;
+    margin-bottom: 24px;
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* Custom scrollbar for items list */
+
+#item-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+#item-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#item-list::-webkit-scrollbar-thumb {
+    background: #c5c5c5;
+    border-radius: 4px;
+}
+
+#item-list::-webkit-scrollbar-thumb:hover {
+    background: #a5a5a5;
+}
+
+/* Individual list item */
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    margin-bottom: 12px;
+    animation: fadeIn 0.4s ease;
+    transition: all 0.3s;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #27ae60;
+}
+
+/* Hover effect for list items */
+
+.list-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Content area of list item (image and text) */
+
+.item-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+}
+
+/* Item category image */
+
+.item-image {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+/* Item text */
+
+.item-text {
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Styling for purchased items */
+
+.purchased {
+    opacity: 0.7;
+    background-color: #f0f4ff;
+}
+
+/* Text styling for purchased items */
+
+.purchased .item-text {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+/* Controls area for each item (purchase and delete buttons) */
+
+.item-controls {
+    display: flex;
+    gap: 10px;
+}
+
+/* Purchase and delete buttons */
+
+.purchase-btn,
+.delete-btn {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Purchase button specific styling */
+
+.purchase-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.purchase-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Delete button specific styling */
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== ACTION BUTTONS ===== */
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Clear all and clear purchased buttons */
+
+#clear-all,
+#clear-purchased {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Clear all button specific styling */
+
+#clear-all {
+    background-color: #f39c12;
+    color: white;
+}
+
+#clear-all:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Clear purchased button specific styling */
+
+#clear-purchased {
+    background-color: #7f8c8d;
+    color: white;
+}
+
+#clear-purchased:hover {
+    background-color: #95a5a6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== EMPTY STATE ===== */
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Icon in empty state */
+
+.empty-state i {
+    font-size: 56px;
+    opacity: 0.5;
+}
+
+.empty-state .muted {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* ===== STATISTICS SECTION ===== */
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual statistic item */
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 0 15px;
+    position: relative;
+}
+
+/* Separator between statistic items */
+
+.stat:not(:last-child):after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: #27ae60;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    font-size: 14px;
+}
+
+footer .name {
+    font-weight: 600;
+    color: #f1c40f;
+}
+
+/* ===== NOTIFICATION ===== */
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 16px 24px;
+    background: #27ae60;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+/* ===== ANIMATIONS ===== */
+/* Fade in animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Shake animation for input validation */
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* Shake class for applying the animation */
+
+.shake {
+    animation: shake 0.3s ease;
+}
+
+/* ===== RESPONSIVE DESIGN FOR MOBILE ===== */
+
+@media (max-width: 600px) {
+    .container {
+        border-radius: 12px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .app-content {
+        padding: 20px;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    #item-input {
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    #add-btn {
+        border-radius: 10px;
+        justify-content: center;
+    }
+
+    .categories {
+        justify-content: center;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .list-item {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    .item-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stat:not(:last-child):after {
+        display: none;
+    }
+
+    .stat {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .stat:last-child {
+        border-bottom: none;
+    }
+}
